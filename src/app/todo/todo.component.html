@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row ">
+    <div class="col-md-6">
+      <div class="header jumbotron">
+        <h1 class="header">My To Do List</h1>
+        <input type="text" id="myInput" placeholder="Task ..." class="form-control" #task>
+        <hr>
+        <button (click)="addTodo($event,task)" class="btn btn-success btn-block">Add</button>
+      </div>
+    </div>
+
+    <div class="jumbotron col-md-6">
+      <ul class="list-group" *ngFor="let todo of todos">
+        <li class="list-group-item">{{todo.name}}
+          <i (click)="deleteTodo($event,todo._id)"
+             class="glyphicon glyphicon-remove pull-right"
+             style="color: red;cursor: pointer">
+          </i>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
