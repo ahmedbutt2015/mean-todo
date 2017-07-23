@@ -31,6 +31,9 @@ export class TodoComponent implements OnInit {
     console.log(id)
     this._todoService.deleteTask(id).subscribe(todo => {
       // this.todos.push({name: task.value, _id: todo._id})
+      this.todos = this.todos.filter(function (value) {
+        return value._id != id
+      })
     })
 
   }
